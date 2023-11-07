@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Debug Jest Tests",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/node_modules/.bin/jest",
+        "args": [
+          // You can specify the path to your test file here
+          "src/Packer.test.ts",
+          "--runInBand",
+          "--detectOpenHandles",
+          "--no-cache"
+        ],
+        "cwd": "${workspaceFolder}",
+        "internalConsoleOptions": "openOnSessionStart",
+        "runtimeArgs": ["--inspect-brk"],
+        "protocol": "inspector",
+        "console": "integratedTerminal",
+        "sourceMaps": true,
+        "skipFiles": ["<node_internals>/**/*.js"],
+        "outFiles": ["${workspaceFolder}/dist/**/*.js"], // Change this to match your output directory
+        "restart": true,
+        "port": 9229 // You can change the port number if needed
+      }
+    ]
+  }
+  
